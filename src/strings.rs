@@ -1,4 +1,3 @@
-use hyper::Request;
 use http::request::Parts;
 
 pub fn get_root_path(parts: &Parts) -> Option<String> {
