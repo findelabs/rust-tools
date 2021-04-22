@@ -3,7 +3,8 @@ use url::form_urlencoded;
 use std::collections::HashMap;
 
 pub type Queries = HashMap<String, String>;
- 
+
+// let _queries = queries(&parts).expect("Failed to generate hashmap of queries");
 pub fn queries(parts: &Parts) -> Option<Queries> {
     let queries: HashMap<String, String> = parts
         .uri
