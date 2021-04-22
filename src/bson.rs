@@ -1,7 +1,7 @@
 use serde_json::{Map, Value};
 use bson::Document;
 
-pub fn to_bson(string: &str) -> Result<Document> {
+pub fn to_doc(string: &str) -> Result<Document> {
 
   let v: Map<String, Value> = match serde_json::from_str(value) {
     Ok(val) => {
