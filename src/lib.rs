@@ -1,5 +1,6 @@
 pub mod http;
 pub mod strings;
+pub mod bson;
 
 #[cfg(test)]
 mod tests {
