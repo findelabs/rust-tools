@@ -18,5 +18,5 @@ pub fn to_doc(value: &str) -> Result<Document, Box<dyn error::Error>> {
     Err(e) => {
       return Err(Box::new(e))
     }
-  };
+  }
 }
