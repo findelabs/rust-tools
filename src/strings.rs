@@ -1,5 +1,5 @@
 use hyper::Request;
-http::request::Parts;
+use http::request::Parts;
 
 pub fn get_root_path(parts: &Parts) -> Option<String> {
   match parts.uri.path() {
