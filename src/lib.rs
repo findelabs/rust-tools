@@ -1,4 +1,4 @@
-pub mod query;
+pub mod http;
 pub mod strings;
 
 #[cfg(test)]
