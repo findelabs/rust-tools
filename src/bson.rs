@@ -6,17 +6,17 @@ pub fn to_doc(value: &str) -> Result<Document, Box<dyn error::Error>> {
 
   let v: Map<String, Value> = match serde_json::from_str(value) {
     Ok(val) => {
-      val
+      Ok(val)
     },
     Err(e) => {
-      return Err(e)
+      return Box::new(e)
     }
   };
 
   let data = match bson::to_document(&v) {
-    Ok(d) => d,
+    Ok(d) => Ok(d),
     Err(e) => {
-      return Err(e)
+      return Box::new(e)
     }
   };
 }
