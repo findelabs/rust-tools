@@ -9,14 +9,14 @@ pub fn to_doc(value: &str) -> Result<Document, Box<dyn error::Error>> {
       Ok(val)
     },
     Err(e) => {
-      return Box::new(e)
+      return Err(Box::new(e))
     }
   };
 
   let data = match bson::to_document(&v) {
     Ok(d) => Ok(d),
     Err(e) => {
-      return Box::new(e)
+      return Err(Box::new(e))
     }
   };
 }
