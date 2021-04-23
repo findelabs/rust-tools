@@ -16,6 +16,7 @@ pub fn to_doc(value: &str) -> Result<Document, Box<dyn error::Error>> {
   match bson::to_document(&v) {
     Ok(d) => Ok(d),
     Err(e) => {
+      eprintln!("Error converting to bson", e);
       return Err(Box::new(e))
     }
   }
