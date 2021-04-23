@@ -10,7 +10,6 @@ pub fn to_doc(value: &str) -> Result<Document, Box<dyn error::Error + Send + Syn
       val
     },
     Err(e) => {
-      eprintln!("Error data converting to json: {}", e);
       return Err(Box::new(e))
     }
   };
