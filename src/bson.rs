@@ -1,6 +1,7 @@
 use serde_json::{Map, Value};
 use bson::Document;
 use std::error;
+use bson::de::from_bson;
 
 pub fn to_doc(value: &str) -> Result<Document, Box<dyn error::Error>> {
 
