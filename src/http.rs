@@ -7,7 +7,7 @@ use std::error::Error;
 pub type Queries = HashMap<String, String>;
 
 // let _queries = queries(&parts).expect("Failed to generate hashmap of queries");
-pub fn queries(parts: &Parts) -> Result<Queries,Box<dyn Error + Send + Sync>>; {
+pub fn queries(parts: &Parts) -> Result<Queries,Box<dyn Error + Send + Sync>> {
     let queries: HashMap<String, String> = parts
         .uri
         .query()
