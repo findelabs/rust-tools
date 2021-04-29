@@ -17,8 +17,9 @@ pub fn queries(parts: &Parts) -> Result<Queries,Box<dyn Error + Send + Sync>> {
             .collect()
         })
         .map(|(k,v)|{
-            (k,v.parse::<i64>()).collect()
+            (k,v.parse::<i64>())
         })
+        .collect()
         .unwrap_or_else(HashMap::new);
     
     Ok(queries)
