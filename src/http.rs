@@ -13,7 +13,7 @@ pub fn queries(parts: &Parts) -> Result<Queries,Box<dyn Error + Send + Sync>> {
         .query()
         .map(|v| {
             form_urlencoded::parse(v.as_bytes())
-            .parse::<i64>()?
+            .into_owned()
             .collect()
         })
         .unwrap_or_else(HashMap::new);
