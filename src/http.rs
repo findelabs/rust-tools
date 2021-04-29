@@ -2,10 +2,11 @@ use http::request::Parts;
 use url::form_urlencoded;
 use std::collections::HashMap;
 
+type Result<T> = Result<T,Box<dyn Error + Send + Sync>>;
 pub type Queries = HashMap<String, String>;
 
 // let _queries = queries(&parts).expect("Failed to generate hashmap of queries");
-pub fn queries(parts: &Parts) -> Option<Queries> {
+pub fn queries(parts: &Parts) -> Result<Queries> {
     let queries: HashMap<String, String> = parts
         .uri
         .query()
@@ -16,5 +17,5 @@ pub fn queries(parts: &Parts) -> Option<Queries> {
         })
         .unwrap_or_else(HashMap::new);
     
-    Some(queries)
+    Ok(queries)
 }
