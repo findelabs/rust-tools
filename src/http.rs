@@ -11,7 +11,7 @@ pub fn queries(parts: &Parts) -> Result<Queries,Box<dyn Error + Send + Sync>> {
     let queries: HashMap<String, i64> = parts
         .uri
         .query()
-        .map(|v| {
+        .map(|v as i64| {
             form_urlencoded::parse(v.as_bytes())
             .into_owned()
             .collect()
