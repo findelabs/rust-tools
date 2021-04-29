@@ -1,6 +1,7 @@
 use http::request::Parts;
 use url::form_urlencoded;
 use std::collections::HashMap;
+use std::error::Error;
 
 type Result<T> = Result<T,Box<dyn Error + Send + Sync>>;
 pub type Queries = HashMap<String, String>;
