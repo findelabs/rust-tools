@@ -4,11 +4,11 @@ use std::collections::HashMap;
 use std::error::Error;
 
 //type Result<T> = Result<T,Box<dyn Error + Send + Sync>>;
-pub type Queries = HashMap<String, String>;
+pub type Queries = HashMap<String, i64>;
 
 // let _queries = queries(&parts).expect("Failed to generate hashmap of queries");
 pub fn queries(parts: &Parts) -> Result<Queries,Box<dyn Error + Send + Sync>> {
-    let queries: HashMap<String, String> = parts
+    let queries: HashMap<String, i64> = parts
         .uri
         .query()
         .map(|v| {
