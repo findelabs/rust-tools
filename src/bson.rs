@@ -1,5 +1,5 @@
 use serde_json::{Map, Value};
-use bson::Document;
+use bson::document::Document;
 use std::error;
 use std::convert::TryFrom;
 
